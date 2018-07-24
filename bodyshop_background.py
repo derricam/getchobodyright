@@ -11,12 +11,18 @@ def backgroundTextAndBoxes():
     textFont(font,58)
     fill(255)
     text("Get'cho Body Right",150,150)
-    rect(50,250,150,150,30)
-    rect(450,250,150,150,30)
-    rect(800,250,150,150,30)
+    stroke(0)
+    rect(50,325,150,150,30)
+    rect(425,325,150,150,30)
+    rect(800,325,150,150,30)
     strokeWeight(4)
     
-    if (mouseX >= 50 and mouseX <= 200) and (mouseY >= 250 and mouseY <= 400):
+    if (mouseX >= 50 and mouseX <= 200) and (mouseY >= 325 and mouseY <= 475):
         stroke(204, 102, 0)
-        rect(50,250,150,150,30)
-    else: noStroke
+        rect(50,325,150,150,30)
+    if (mouseX >= 425 and mouseX <= 600) and (mouseY >= 325 and mouseY <= 475):
+        stroke(204, 102, 0)
+        rect(425,325,150,150,30)
+    if (mouseX >= 800 and mouseX <= 950) and (mouseY >= 325 and mouseY <= 475):
+        stroke(204, 102, 0)
+        rect(800,325,150,150,30)
