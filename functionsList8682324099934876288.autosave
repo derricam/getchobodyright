@@ -1,16 +1,16 @@
 def startAvatarPage():
     size(1000,800)
     background(147, 103, 89)
-
+    
     textSize(20)
     text("LEFT MOUSE = BODY", 200, 700)
-    text("CENTER MOUSE = EYES ", 200, 725)
-    text("RIGHT MOUSE = PANTS", 200, 750)
-
-
-
-
-
+    text("CENTER MOUSE = SHOES ", 200, 725)
+    text("RIGHT MOUSE = HAT", 200, 750)
+    
+    
+    
+    
+    
     #1
     fill(255,255,255)
     rect(0,0,50,50)
@@ -32,8 +32,8 @@ def startAvatarPage():
     #7
     fill(0, 255, 255)
     rect(0,300,50,50)
-
-
+    
+    
 
 def drawBody():
     if mouseButton == LEFT:
@@ -51,8 +51,8 @@ def drawBody():
             fill(255, 255, 0)
         if mouseX <=50 and mouseY > 300 and mouseY <=350:
             fill(0, 255, 255)
-
-def mouseFunction():
+    
+def mouseFunction():         
     if mouseX <= 50 and mouseY < 50:
         fill(255, 255, 255)
     if mouseX <= 50 and mouseY > 50 and mouseY <=100:
@@ -85,12 +85,12 @@ def mouseFunction():
         quad(200, 300, 240, 340, 240, 370, 200, 330)   # make left side of shirt
         triangle(290, 340, 330, 340, 315, 360)         # make left collar
         triangle(345, 340, 385, 340, 365, 358)         # make right collar
-
+        
         rect(240, 370, 200, 40)                        # make front of shirt
         quad(200, 330, 240, 370, 240, 410, 200, 370)   # make left side of shirt
         beltWidth = 30
         beltHeight = 10
-
+        
         rect(258, 385, beltWidth, beltHeight)
         rect(303, 385, beltWidth, beltHeight)
         rect(348, 385, beltWidth, beltHeight)
