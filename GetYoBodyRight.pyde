@@ -4,7 +4,7 @@ from bodyshop_background import *
 from bodyshopscreen2 import *
 def setup():
     size(1000, 800)
-    global me
+    global screen
     
     screen = "one"
     
