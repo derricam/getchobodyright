@@ -50,6 +50,6 @@ def mouseClicked():
         screen = "two"
         vehicle = "bus"
         makeBackground()
-    if screen == "two" and (mouseX >= 930 and mouseX <= 980) and (mouseY >= 730 and mouseY <= 780):
+    if screen == "two" and (mouseX >= 880 and mouseX <= 980) and (mouseY >= 700 and mouseY <= 780):
         screen = "three"
         startAvatarPage()
