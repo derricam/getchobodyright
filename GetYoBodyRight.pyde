@@ -1,9 +1,16 @@
+add_library('minim')
+
 from functionsList import *
 from bodyshop_background import *
 from bodyshopscreen2 import *
 from spongebob import *
 
+
 def setup():
+    global player
+    minim = Minim(this)
+    player = minim.loadFile("Profound Beats - Lo-Fi.mp3")
+    player.loop()
     size(1000, 800)
     global screen
     
