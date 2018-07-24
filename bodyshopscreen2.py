@@ -7,42 +7,42 @@ def makeBackground():
     bodyB = 255
 
 def drawCar():
-    global bodyR, bodyG, bodyB
+    global insideOfGarage, bodyR, bodyG, bodyB
     image(insideOfGarage, 0, 0, 1000, 800)
     
     #color choices
     stroke(0)
     strokeWeight(1)
     fill(255, 0, 0)
-    rect(320, 50, 75, 75)
+    rect(320, 50, 75, 75, 30)
     fill(0, 0, 255)
-    rect(420, 50, 75, 75)
+    rect(420, 50, 75, 75, 30)
     fill(255, 255, 255)
-    rect(520, 50, 75, 75)
+    rect(520, 50, 75, 75, 30)
     fill(0, 0, 0)
-    rect(620, 50, 75, 75)
+    rect(620, 50, 75, 75, 30)
     
-    #pick a color
+    #color light when hover
     if (mouseX >= 320 and mouseX <= 395) and (mouseY >= 50 and mouseY <= 125):
         stroke(0, 255, 0)
         strokeWeight(4)
         fill(255, 0, 0)
-        rect(320, 50, 75, 75)
+        rect(320, 50, 75, 75, 30)
     elif (mouseX >= 420 and mouseX <= 495) and (mouseY >= 50 and mouseY <= 125):
         stroke(0, 255, 0)
         strokeWeight(4)
         fill(0, 0, 255)
-        rect(420, 50, 75, 75)
+        rect(420, 50, 75, 75, 30)
     elif (mouseX >= 520 and mouseX <= 595) and (mouseY >= 50 and mouseY <= 125):
         stroke(0, 520, 0)
         strokeWeight(4)
         fill(255, 255, 255)
-        rect(520, 50, 75, 75)
+        rect(520, 50, 75, 75, 30)
     elif (mouseX >= 620 and mouseX <= 695) and (mouseY >= 50 and mouseY <= 125):
         stroke(0, 255, 0)
         strokeWeight(4)
         fill(0, 0, 0)
-        rect(620, 50, 75, 75)
+        rect(620, 50, 75, 75, 30)
     
     #body of car
     noStroke()
@@ -82,7 +82,7 @@ def drawCar():
     
     fill(255,215,0)
     textSize(35)
-    text("Pick a Body Color!", 350, 700)
+    text("Pick a Body Color!", 300, 700)
     
 def pickColor():
     global bodyR, bodyG, bodyB
