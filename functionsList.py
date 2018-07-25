@@ -3,9 +3,9 @@ def startAvatarPage():
     background(147, 103, 89)
 
     textSize(20)
-    text("LEFT MOUSE = BODY", 200, 700)
-    text("CENTER MOUSE = SHOES ", 200, 725)
-    text("RIGHT MOUSE = HAT", 200, 750)
+    text("LEFT MOUSE = FACE", 200, 700)
+    text("CENTER MOUSE = EYES ", 200, 725)
+    text("RIGHT MOUSE = CLOTHES", 200, 750)
 
 
 
