@@ -46,4 +46,3 @@ def backgroundTextAndBoxes():
         fill(204,102,0)
         textFont(font,32)
         text("Bus",838,410)
-    
