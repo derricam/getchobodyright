@@ -4,15 +4,20 @@ from functionsList import *
 from bodyshop_background import *
 from bodyshopscreen2 import *
 from spongebob import *
+from radio import *
 
 
 def setup():
-    global player
-    minim = Minim(this)
-    player = minim.loadFile("Profound Beats - Lo-Fi.mp3")
-    player.loop()
     size(1000, 800)
     global screen
+    global minim
+    minim = Minim(this)
+    global player, player1, player2, player3
+    player = minim.loadFile("No Hands Clean.mp3")
+    player1 = minim.loadFile("I Bet You Wont.mp3")
+    player2 = minim.loadFile("In My Feelings.mp3")
+    player3 = minim.loadFile("Kid CuDi Pursuit Of Happiness.mp3")
+    
     
     screen = "one"
     vehicle = "car"
@@ -22,7 +27,7 @@ def setup():
     
 
 def draw():
-    global screen, vehicle
+    global screen, vehicle, player, player1, player2, player3, musicPlaying
     
     if screen == "one":
         backgroundTextAndBoxes()
@@ -35,6 +40,8 @@ def draw():
     elif screen == "three":
         #drawBody()
         spongebob()
+    elif screen == "four":
+        musicStation(player, player1, player2, player3)
         
         
 def mouseClicked():
@@ -44,7 +51,15 @@ def mouseClicked():
         pickColor()
     if screen == "three":
         mouseFunction()
-        
+    if screen == "four":
+        musicPlayed()
+    
+    if screen == "two" and (mouseX >= 20 and mouseX <= 120) and (mouseY >= 700 and mouseY <= 780):
+        screen = "one"
+        backgroundImage()
+    if screen == "three" and (mouseX >= 20 and mouseX <= 120) and (mouseY >= 600 and mouseY <= 680):
+        screen = "two"
+        makeBackground()
     if screen == "one" and (mouseX >= 50 and mouseX <= 200) and (mouseY >= 325 and mouseY <= 475):
         screen = "two"
         vehicle = "car"
@@ -60,3 +75,6 @@ def mouseClicked():
     if screen == "two" and (mouseX >= 880 and mouseX <= 980) and (mouseY >= 700 and mouseY <= 780):
         screen = "three"
         startAvatarPage()
+    if screen == "three" and (mouseX >= 880 and mouseX <= 980) and (mouseY >= 20 and mouseY <= 100):
+        screen = "four"
+        radioBackground()
