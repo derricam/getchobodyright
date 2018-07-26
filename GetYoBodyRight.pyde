@@ -1,5 +1,3 @@
-add_library('minim')
-
 from functionsList import *
 from bodyshop_background import *
 from bodyshopscreen2 import *
