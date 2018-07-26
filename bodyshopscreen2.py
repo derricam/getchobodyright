@@ -364,6 +364,7 @@ def drawBus():
     rect(110, 220, 680, 350, 30, 30, 0, 10) #top of body
     rect(790, 380, 100, 190, 0, 50, 10, 0) #hood
     fill(60)
+    textSize(25)
     text("MAGIC SCHOOL BUS", 300, 465)
     
     #doors and windows
@@ -379,17 +380,12 @@ def drawBus():
     rect(140, 400, 600, 10)
     rect(140, 490, 600, 10)
     
-    # noFill()
-    # stroke(60)
-    # strokeWeight(2)
-    # ellipse(385, 460, 30, 10) #door handles
-    # ellipse(595, 460, 30, 10)
-    
-    # #lights
-    # fill(255,215,0)
-    # ellipse(860, 490, 20, 40)
-    # fill(255,64,64)
-    # ellipse(130, 490, 20, 40)
+    #lights
+    strokeWeight(2)
+    fill(255,215,0)
+    ellipse(860, 440, 20, 40)
+    fill(255,64,64)
+    ellipse(130, 440, 20, 40)
     
     #tires
     stroke(60)
@@ -475,13 +471,15 @@ def setupDrive():
     carY = 440
     truckX = 110
     truckY = 380
+    busX = 110
+    busY = 220
     
     freeway = loadImage("freeway.png")
     
 def driveCar():
-    #body of car
     global freeway, carX, carY, bodyR, bodyG, bodyB
     image(freeway, 0, 0, 1150, 874)
+    #body of car
     noStroke()
     fill(bodyR, bodyG, bodyB)
     bezier(carX+90, carY+10, carX+390, carY-140, carX+540, carY-190, carX+690, carY+10) #top of the body
@@ -519,7 +517,14 @@ def driveCar():
     
     carX += 12
     
+    if carX >= 980:
+        textSize(80)
+        fill(bodyR, bodyG, bodyB)
+        text("THE END", 270, 370)
+    
 def driveTruck():
+    global freeway, truckX, truckY, bodyR, bodyG, bodyB
+    image(freeway, 0, 0, 1150, 874)
     #body of truck
     noStroke()
     fill(bodyR, bodyG, bodyB)
@@ -531,30 +536,80 @@ def driveTruck():
     windowG = 60
     windowB = 60
     fill(windowR, windowG, windowB)
-    quad(370, 380, 400, 230, 650, 230, 705, 380)
+    quad(truckX+260, truckY, truckX+290, truckY-150, truckX+540, truckY-150, truckX+595, truckY)
     fill(0)
-    rect(490, 225, 2, 345)
-    rect(490, 225, 165, 2)
-    rect(708, 375, 2, 195)
-    quad(655, 225, 657, 225, 710, 375, 708, 375)
+    rect(truckX+380, truckY-155, 2, 345)
+    rect(truckX+380, truckY-155, 165, 2)
+    rect(truckX+598, truckY-5, 2, 195)
+    quad(truckX+545, truckY-155, truckX+547, truckY-155, truckX+600, truckY-5, truckX+598, truckY-5)
     noFill()
     stroke(60)
     strokeWeight(2)
-    ellipse(515, 410, 30, 10) #door handles
+    ellipse(truckX+405, truckY+30, 30, 10) #door handles
     
     #lights
     fill(255,215,0)
-    ellipse(860, 430, 20, 40)
+    ellipse(truckX+750, truckY+50, 20, 40)
     fill(255,64,64)
-    ellipse(130, 430, 20, 40)
+    ellipse(truckX+20, truckY+50, 20, 40)
     
     #tires
     stroke(60)
     fill(0)
-    ellipse(220, 570, 100, 100)
-    ellipse(780, 570, 100, 100)
-    ellipse(220, 570, 80, 80)
-    ellipse(780, 570, 80, 80)
+    ellipse(truckX+110, truckY+190, 100, 100)
+    ellipse(truckX+670, truckY+190, 100, 100)
+    ellipse(truckX+110, truckY+190, 80, 80)
+    ellipse(truckX+670, truckY+190, 80, 80)
+    
+    truckX += 12
+    
+    if truckX >= 980:
+        textSize(80)
+        fill(bodyR, bodyG, bodyB)
+        text("THE END", 270, 370)
 
 def driveBus():
-    pass
+    global freeway, busX, busY, bodyR, bodyG, bodyB
+    image(freeway, 0, 0, 1150, 874)
+    #body of bus
+    noStroke()
+    fill(bodyR, bodyG, bodyB)
+    rect(busX, busY, 680, 350, 30, 30, 0, 10) #top of body
+    rect(busX++680, 380, 100, 190, 0, 50, 10, 0) #hood
+    fill(60)
+    text("MAGIC SCHOOL BUS", busX+190, busY+245)
+    
+    #doors and windows
+    windowR = 60
+    windowG = 60
+    windowB = 60
+    fill(windowR, windowG, windowB)
+    rect(busX+15, busY+15, 120, 150, 30)
+    rect(busX+150, busY+15, 120, 150, 30)
+    rect(busX+285, busY+15, 120, 150, 30)
+    rect(busX+420, busY+15, 120, 150, 30)
+    rect(busX+555, busY+15, 110, 150, 30)
+    rect(busX+30, busY+180, 600, 10)
+    rect(busX+30, busY+270, 600, 10)
+    
+    #lights
+    strokeWeight(2)
+    fill(255,215,0)
+    ellipse(busX+750, busY+220, 20, 40)
+    fill(255,64,64)
+    ellipse(busX+20, busY+220, 20, 40)
+    
+    #tires
+    stroke(60)
+    fill(0)
+    ellipse(busX+110, busY+350, 120, 120)
+    ellipse(busX+670, busY+350, 120, 120)
+    ellipse(busX+110, busY+350, 100, 100)
+    ellipse(busX+670, busY+350, 100, 100)
+    
+    busX += 12
+    
+    if busX >= 980:
+        textSize(80)
+        fill(bodyR, bodyG, bodyB)
+        text("THE END", 270, 370)
