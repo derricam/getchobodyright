@@ -47,7 +47,9 @@ def radioBackground():
     
     #steering wheel
     fill(10)
+    strokeWeight(30)
     bezier(690, 460, 710, 390, 890, 395, 990, 460)
+    strokeWeight(7)
     rect(960, 440, 80, 300)
     stroke(156,102,31)
     strokeWeight(50)
