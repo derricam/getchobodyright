@@ -4,6 +4,7 @@ def spongebob():
 
 
 
+    noStroke()
     fill(0, 255, 255)                              # make irises light blue
     ellipse(365, 170, 25, 33)                      # make right iris
     ellipse(310, 170, 25, 33)                      # make left iris
@@ -27,3 +28,34 @@ def spongebob():
 
 
     stroke(238, 106, 80)
+    
+    #next button
+    stroke(0)
+    fill(0, 255, 0)
+    rect(880, 20, 100, 80, 30)
+    fill(255)
+    textSize(25)
+    text("NEXT", 888, 70)
+    if (mouseX >= 880 and mouseX <= 980) and (mouseY >= 20 and mouseY <= 100):
+        fill(0, 255, 0)
+        stroke(127,255,0)
+        rect(880, 20, 100, 80, 30)
+        fill(255)
+        textSize(25)
+        text("NEXT", 888, 70)
+        
+    #back button
+    stroke(0)
+    strokeWeight(1)
+    fill(255, 0, 0)
+    rect(20, 600, 100, 80, 30)
+    fill(0)
+    textSize(25)
+    text("BACK", 28, 650)
+    if (mouseX >= 20 and mouseX <= 120) and (mouseY >= 600 and mouseY <= 680):
+        fill(255, 0, 0)
+        stroke(255,0,0)
+        rect(20, 600, 100, 80, 30)
+        fill(0)
+        textSize(25)
+        text("BACK", 28, 650)
