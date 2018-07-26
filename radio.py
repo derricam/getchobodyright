@@ -20,17 +20,6 @@ def radioBackground():
     background(0,0,0)
     size(1000,800)
     global player, player1, player2, player3
-    # top handle bar
-    fill(255,0,0)
-    stroke("#4D4D4D")
-    rect(170, 140, 450, 50,20, 20, 0, 0)
-
-    #left handle bar
-    stroke(0)
-    rect(170, 190, 35, 60)
-
-    # right handle bar
-    rect(585, 190, 35, 60)
 
     #radio
     strokeWeight(4)
