@@ -11,7 +11,9 @@ musicPlaying = False
 stations = {"101.1" : "Hip Hop",
             "107.5" : "Classics",
             "99.7" : "TRAP",
-            "100.1" : "R&B"}
+            "100.1" : "R&B",
+            "100.1" : "JIG"}
+
 
 textDisplayed = ""
 previousText =""
@@ -20,6 +22,7 @@ def radioBackground():
     background(0,0,0)
     size(1000,800)
     global player, player1, player2, player3
+
     # top handle bar
     fill(255,0,0)
     stroke("#4D4D4D")
@@ -31,6 +34,19 @@ def radioBackground():
 
     # right handle bar
     rect(585, 190, 35, 60)
+
+    #background(122,197,205)
+    sky = loadImage("sky6.jpg")
+    image(sky, 0, -250, 1000, 584)
+    stroke(0)
+    strokeWeight(12)
+    fill(60, 60, 60)
+    bezier(-100, 230, 250, 200, 750, 200, 1100, 230)
+    noStroke()
+    rect(0, 230, 1000, 570)
+    size(1000,800)
+    global player, player1, player2, player3, sky
+
 
     #radio
     strokeWeight(4)
@@ -44,6 +60,9 @@ def radioBackground():
     fill(255,)
     rect(175,235,50,15)
 
+    fill(138,54,15)
+    rect(150,250,500,300, 30)
+
     #speaker
     strokeWeight(7)
     stroke("#4D4D4D")
@@ -53,6 +72,42 @@ def radioBackground():
     noStroke()
     fill(0)
     ellipse(260, 400, 30, 30)
+    
+    #air vents
+    stroke(156,102,31)
+    fill(0)
+    rect(15, 270, 125, 130, 20)
+    rect(15, 405, 125, 130, 20)
+    stroke(255)
+    bezier(25, 290, 35, 280, 125, 280, 130, 290)
+    bezier(25, 310, 35, 300, 125, 300, 130, 310)
+    bezier(25, 330, 35, 320, 125, 320, 130, 330)
+    bezier(25, 350, 35, 340, 125, 340, 130, 350)
+    bezier(25, 370, 35, 360, 125, 360, 130, 370)
+    bezier(25, 390, 35, 380, 125, 380, 130, 390)
+    
+    bezier(25, 425, 35, 415, 125, 415, 130, 425)
+    bezier(25, 445, 35, 435, 125, 435, 130, 445)
+    bezier(25, 465, 35, 455, 125, 455, 130, 465)
+    bezier(25, 485, 35, 475, 125, 475, 130, 485)
+    bezier(25, 505, 35, 495, 125, 495, 130, 505)
+    bezier(25, 525, 35, 515, 125, 515, 130, 525)
+    
+    
+    
+    #steering wheel
+    fill(10)
+    strokeWeight(30)
+    bezier(690, 460, 710, 390, 890, 395, 990, 460)
+    strokeWeight(7)
+    rect(960, 440, 80, 300)
+    stroke(156,102,31)
+    strokeWeight(50)
+    noFill()
+    ellipse(990, 450, 600, 600)
+    fill(156,102,31)
+    noStroke()
+    ellipse(990, 450, 300, 250)
 
     #dial base
     stroke("#4D4D4D")
@@ -62,6 +117,7 @@ def radioBackground():
 
     #stations
     fill(0)
+    textSize(10)
     text("99.7", 490, 433)
     text("100.1", 535, 396)
     text("101.1", 583, 433)
@@ -83,7 +139,7 @@ def radioBackground():
 #      musicStation()
 
 def musicStation(player, player1, player2, player3):
-    global xCoord, yCoord, previousX, previousY, stations, textDisplayed, previousText, clicked, musicPlaying
+    global xCoord, yCoord, previousX, previousY, stations, textDisplayed, previousText, clicked, musicPlaying, sky
 
     if mousePressed and mouseButton == LEFT and mouseX >= 483 and mouseX <550 and mouseY > 411 and mouseY <446 and musicPlaying == False: #play trap
         
