@@ -17,6 +17,10 @@ textDisplayed = ""
 previousText =""
 
 def radioBackground():
+    background(0,0,0)
+    size(1000,800)
+    global player, player1, player2, player3
+
     #background(122,197,205)
     sky = loadImage("sky6.jpg")
     image(sky, 0, -250, 1000, 584)
@@ -28,6 +32,7 @@ def radioBackground():
     rect(0, 230, 1000, 570)
     size(1000,800)
     global player, player1, player2, player3, sky
+
 
     #radio
     strokeWeight(4)
@@ -44,6 +49,28 @@ def radioBackground():
     noStroke()
     fill(0)
     ellipse(260, 400, 30, 30)
+    
+    #air vents
+    stroke(156,102,31)
+    fill(0)
+    rect(15, 270, 125, 130, 20)
+    rect(15, 405, 125, 130, 20)
+    stroke(255)
+    bezier(25, 290, 35, 280, 125, 280, 130, 290)
+    bezier(25, 310, 35, 300, 125, 300, 130, 310)
+    bezier(25, 330, 35, 320, 125, 320, 130, 330)
+    bezier(25, 350, 35, 340, 125, 340, 130, 350)
+    bezier(25, 370, 35, 360, 125, 360, 130, 370)
+    bezier(25, 390, 35, 380, 125, 380, 130, 390)
+    
+    bezier(25, 425, 35, 415, 125, 415, 130, 425)
+    bezier(25, 445, 35, 435, 125, 435, 130, 445)
+    bezier(25, 465, 35, 455, 125, 455, 130, 465)
+    bezier(25, 485, 35, 475, 125, 475, 130, 485)
+    bezier(25, 505, 35, 495, 125, 495, 130, 505)
+    bezier(25, 525, 35, 515, 125, 515, 130, 525)
+    
+    
     
     #steering wheel
     fill(10)
