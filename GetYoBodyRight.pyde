@@ -3,6 +3,7 @@ from bodyshop_background import *
 from bodyshopscreen2 import *
 from spongebob import *
 from radio import *
+from skrt import *
 
 
 def setup():
@@ -25,7 +26,7 @@ def setup():
     
 
 def draw():
-    global screen, vehicle, player, player1, player2, player3, musicPlaying
+    global screen, vehicle, player, player1, player2, player3, musicPlaying, bodyR, bodyG, bodyB
     
     if screen == "one":
         backgroundTextAndBoxes()
@@ -40,11 +41,12 @@ def draw():
         spongebob()
     elif screen == "four":
         musicStation(player, player1, player2, player3)
+    elif screen == "five":
+        driveCar()
         
         
 def mouseClicked():
-    global vehicle
-    global screen
+    global vehicle, screen, bodyR, bodyG, bodyB
     if screen == "two":
         pickColor()
     if screen == "three":
@@ -76,3 +78,6 @@ def mouseClicked():
     if screen == "three" and (mouseX >= 880 and mouseX <= 980) and (mouseY >= 20 and mouseY <= 100):
         screen = "four"
         radioBackground()
+    if screen == "four" and (mouseX >= 630 and mouseX <= 730) and (mouseY >= 700 and mouseY <= 780):
+        screen = "five"
+        setupCarDrive()

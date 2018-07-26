@@ -1,3 +1,9 @@
+global bodyR, bodyG, bodyB
+
+# bodyR = 255
+# bodyG = 255
+# bodyB = 255
+
 def makeBackground():
     size(1000, 800)
     global insideOfGarage, bodyR, bodyG, bodyB, tireR, tireG, tireB

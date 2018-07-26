@@ -133,6 +133,20 @@ def radioBackground():
     text("! ! ALWAYS TURN OFF STATION BEFORE YOU START ANOTHER ! !", 100, 630)
     text("LEFT CLICK TO PLAY", 300, 660)
     text("RIGHT CLICK TO STOP", 300, 680)
+    
+    #next button
+    fill(0, 255, 0)
+    rect(630, 700, 100, 80, 30)
+    fill(255)
+    textSize(25)
+    text("NEXT", 638, 750)
+    if (mouseX >= 630 and mouseX <= 730) and (mouseY >= 700 and mouseY <= 780):
+        fill(0, 255, 0)
+        stroke(127,255,0)
+        rect(630, 700, 100, 80, 30)
+        fill(255)
+        textSize(25)
+        text("NEXT", 638, 750)
 
 
 # def draw():
