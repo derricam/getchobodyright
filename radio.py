@@ -11,27 +11,35 @@ musicPlaying = False
 stations = {"101.1" : "Hip Hop",
             "107.5" : "Classics",
             "99.7" : "TRAP",
-            "100.1" : "R&B"}
+            "100.1" : "JIG"}
 
 textDisplayed = ""
 previousText =""
 
 def radioBackground():
+<<<<<<< HEAD
     background(0,0,0)
     size(1000,800)
     global player, player1, player2, player3
+=======
+    #background(122,197,205)
+    sky = loadImage("sky6.jpg")
+    image(sky, 0, -250, 1000, 584)
+    stroke(0)
+    strokeWeight(12)
+    fill(60, 60, 60)
+    bezier(-100, 230, 250, 200, 750, 200, 1100, 230)
+    noStroke()
+    rect(0, 230, 1000, 570)
+    size(1000,800)
+    global player, player1, player2, player3, sky
+>>>>>>> 557b625ae461c45e9dd63a5f870aed18f058a95a
 
     #radio
     strokeWeight(4)
     stroke("#868585")
-    fill(255,0,0)
+    fill(138,54,15)
     rect(150,250,500,300, 30)
-
-    #power button
-    strokeWeight(2)
-    stroke("#4D4D4D")
-    fill(255,)
-    rect(175,235,50,15)
 
     #speaker
     strokeWeight(7)
@@ -42,6 +50,18 @@ def radioBackground():
     noStroke()
     fill(0)
     ellipse(260, 400, 30, 30)
+    
+    #steering wheel
+    fill(10)
+    bezier(690, 460, 710, 390, 890, 395, 990, 460)
+    rect(960, 440, 80, 300)
+    stroke(156,102,31)
+    strokeWeight(50)
+    noFill()
+    ellipse(990, 450, 600, 600)
+    fill(156,102,31)
+    noStroke()
+    ellipse(990, 450, 300, 250)
 
     #dial base
     stroke("#4D4D4D")
@@ -51,6 +71,7 @@ def radioBackground():
 
     #stations
     fill(0)
+    textSize(10)
     text("99.7", 490, 433)
     text("100.1", 535, 396)
     text("101.1", 583, 433)
@@ -72,7 +93,7 @@ def radioBackground():
 #      musicStation()
 
 def musicStation(player, player1, player2, player3):
-    global xCoord, yCoord, previousX, previousY, stations, textDisplayed, previousText, clicked, musicPlaying
+    global xCoord, yCoord, previousX, previousY, stations, textDisplayed, previousText, clicked, musicPlaying, sky
 
     if mousePressed and mouseButton == LEFT and mouseX >= 483 and mouseX <550 and mouseY > 411 and mouseY <446 and musicPlaying == False: #play trap
         
