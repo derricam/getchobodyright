@@ -41,8 +41,12 @@ def draw():
         spongebob()
     elif screen == "four":
         musicStation(player, player1, player2, player3)
-    elif screen == "five":
+    elif screen == "five" and vehicle == "car":
         driveCar()
+    elif screen == "five" and vehicle == "truck":
+        driveTruck()
+    elif screen == "five" and vehicle == "bus":
+        driveBus()
         
         
 def mouseClicked():
@@ -80,4 +84,4 @@ def mouseClicked():
         radioBackground()
     if screen == "four" and (mouseX >= 630 and mouseX <= 730) and (mouseY >= 700 and mouseY <= 780):
         screen = "five"
-        setupCarDrive()
+        setupDrive()
