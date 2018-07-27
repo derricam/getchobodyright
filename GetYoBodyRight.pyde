@@ -15,7 +15,7 @@ def setup():
     player = minim.loadFile("No Hands Clean.mp3")
     player1 = minim.loadFile("I Bet You Wont.mp3")
     player2 = minim.loadFile("In My Feelings.mp3")
-    player3 = minim.loadFile("Kid CuDi Pursuit Of Happiness.mp3")
+    player3 = minim.loadFile("21 Questions.mp3")
     
     
     screen = "one"
